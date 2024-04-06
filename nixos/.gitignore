@@ -1,0 +1,4 @@
+output/
+.configure.sh
+**/boot.nix
+hardware-configuration.nix
