@@ -33,6 +33,7 @@ in
     pkgs.lazygit
     pkgs.git
     pkgs.neovim
+    pkgs.tmux
     pkgs.ripgrep
     pkgs.fd
 
