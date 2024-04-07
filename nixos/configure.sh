@@ -76,5 +76,8 @@ else
   sed -i "s/\"%USE_AMD_GPU_KERNEL_MODULE%\"/false/g" ./**/*.nix
 fi
 
+echo "Symlinkg to ~/.config/nixos"
+ln -sfn $PWD $HOME/.config/nixos
+
 echo "Complete."
 exit 0
