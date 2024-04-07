@@ -18,6 +18,7 @@ are automatically generated on the installation of NixOS. Only copying those con
 
 4. Take generated configuration into use
 > sudo nixos-rebuild switch -I nixos-config=/home/YOUR_USER_NAME_HERE/.config/nixos/configuration.nix
+
 NOTE: This is the only time you will need the -I tag. After you have taken home-manager into use you can use this command instead
 > sudo nixos-rebuild-pathed switch
 
@@ -25,6 +26,7 @@ NOTE: This is the only time you will need the -I tag. After you have taken home-
 
 You can modify the configuration to your liking in this directory. To take new configuration for a spin use following commands
 > ./configure.sh
+
 > sudo nixos-rebuild-pathed switch
 
 If you find yourself modifying configuration often and inputting hostname etc gets tedious you can
