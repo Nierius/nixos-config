@@ -37,6 +37,9 @@ in
     pkgs.ripgrep
     pkgs.fd
 
+    # Game deving
+    # pkgs.godot_4
+
     # Slack tools
     pkgs.discord
     pkgs.spotify

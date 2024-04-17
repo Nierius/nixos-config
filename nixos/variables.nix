@@ -16,14 +16,6 @@ with lib;
       default = "%BLUETOOTH_AUDIOSINK_SUPPORT%";
       type = types.bool;
     };
-    requireServer = mkOption {
-      default = false;
-      type = types.bool;
-    };
-    requireDocker = mkOption {
-      default = false;
-      type = types.bool;
-    };
     enableRemoting = mkOption {
       default = "%ENABLE_REMOTE_ACCESS%";
       type = types.bool;
@@ -34,6 +26,18 @@ with lib;
     };
     amdGpuKernelModule = mkOption {
       default = "%USE_AMD_GPU_KERNEL_MODULE%";
+      type = types.bool;
+    };
+    nvidiaGpuSupport = mkOption {
+      default = "%NVIDIA_GPU_SUPPORT%";
+      type = types.bool;
+    };
+    requireServer = mkOption {
+      default = false;
+      type = types.bool;
+    };
+    requireDocker = mkOption {
+      default = false;
       type = types.bool;
     };
   };

@@ -11,6 +11,7 @@
       ./core/global-packages.nix
       ./core/server.nix
       ./core/docker.nix
+      ./core/nvidia.nix
       ./environment/gnome-env.nix
       ./environment/hyprland-env.nix
       ./environment/firewall.nix
@@ -27,5 +28,5 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
-  system.stateVersion = "22.05";
+  system.stateVersion = "23.05";
 }
