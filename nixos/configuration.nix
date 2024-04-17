@@ -11,6 +11,7 @@
       ./core/global-packages.nix
       ./core/server.nix
       ./core/docker.nix
+      ./core/nvidia.nix
       ./environment/gnome-env.nix
       ./environment/hyprland-env.nix
       ./environment/firewall.nix
