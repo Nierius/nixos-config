@@ -10,6 +10,7 @@ read -p 'Bluetooth headphones support (audio sink) (true/false): ' enableBtHeadp
 read -p 'Setup GNOME remote access readiness (open port and disable sleep on lid close) (true/false): ' enableGnomeRemoting
 read -p 'Are you using AMD GPU (enable drivers) (true/false): ' amdGpu
 read -p 'Is AMD GPU your main GPU (enable kernel module) (true/false): ' amdKernelModule
+read -p 'Are you using nvidia GPU (true/false): ' nvidiaGpu
 
 echo "Saving generated files to /output"
 
@@ -74,6 +75,14 @@ if ! [ -z $amdKernelModule ] && { [ "${amdKernelModule,,}" = "true" ] || [ $amdK
 else
   sed -i "s/\"%USE_AMD_GPU_KERNEL_MODULE%\"/false/g" ./*.nix
   sed -i "s/\"%USE_AMD_GPU_KERNEL_MODULE%\"/false/g" ./**/*.nix
+fi
+
+if ! [ -z $nvidiaGpu ] && { [ "${nvidiaGpu,,}" = "true" ] || [ $nvidiaGpu = "1" ] || [ "${nvidiaGpu,,}" = "yes" ]; }; then
+  sed -i "s/\"%NVIDIA_GPU_SUPPORT%\"/true/g" ./*.nix
+  sed -i "s/\"%NVIDIA_GPU_SUPPORT%\"/true/g" ./**/*.nix
+else
+  sed -i "s/\"%NVIDIA_GPU_SUPPORT%\"/false/g" ./*.nix
+  sed -i "s/\"%NVIDIA_GPU_SUPPORT%\"/false/g" ./**/*.nix
 fi
 
 echo "Symlinkg to ~/.config/nixos"
