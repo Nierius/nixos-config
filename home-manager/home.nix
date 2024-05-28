@@ -48,6 +48,8 @@ in
     pkgs.gcc
     pkgs.go
     pkgs.nodejs
+    pkgs.rustc
+    pkgs.cargo
 
     # Cosmetics
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
@@ -99,6 +101,7 @@ in
   # if you don't want to manage your shell through Home Manager.
   home.sessionVariables = {
     # EDITOR = "emacs";
+    RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
   };
 
   # Let Home Manager install and manage itself.
