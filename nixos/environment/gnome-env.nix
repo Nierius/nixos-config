@@ -13,11 +13,11 @@ mkMerge[
     environment.gnome.excludePackages = (with pkgs; [
       gnome-photos
       gnome-tour
+      gedit
     ]) ++ (with pkgs.gnome; [
       cheese # webcam
       gnome-music
       gnome-terminal
-      gedit
       epiphany
       geary # email
       # evince # document viewer

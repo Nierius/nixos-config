@@ -21,8 +21,8 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "fi";
-    xkbVariant = "";
+    xkb.layout = "fi";
+    xkb.variant = "";
   };
 
   # Configure console keymap
