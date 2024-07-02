@@ -53,12 +53,8 @@ in
     pkgs.cargo
 
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
-    # Cosmetics
-    pkgs.hyprpaper
-    #    pkgs.hyprlock
-    pkgs.dolphin
-    pkgs.waybar
-    pkgs.pavucontrol
+
+    pkgs.brightnessctl
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
