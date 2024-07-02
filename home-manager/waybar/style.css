@@ -1,0 +1,56 @@
+* {
+  /*padding: 0 10px; */
+}
+
+window#waybar {
+  background-color: transparent;
+  color: #ECC30B;
+}
+
+window > box {
+}
+
+#workspaces button {
+  color: #ECC30B;
+  padding: 0 5px;
+  margin-right: 2px;
+}
+
+#workspaces button.focused {
+  background: #64727D;
+  border-bottom: 1px solid white;
+}
+
+#workspaces button:hover {
+  background: #766206;
+  border: 1px solid #ECC30B;
+}
+
+box.module button {
+  background-color: #5E4E04;
+}
+
+#network {
+}
+
+
+button.active {
+  background: #2F394D;
+  padding: 0 10px;
+  margin-right: 3px;
+}
+
+widget > label, widget > box > label {
+  border-radius: 20px;
+  margin: 0 3px;
+}
+
+widget > label {
+  padding: 0 10px;
+  background: #5e4e04;
+}
+
+widget > label:hover {
+ background: #766206;
+}
+
