@@ -8,6 +8,14 @@
   services.blueman.enable = true;
 
   environment.systemPackages = [
-    pkgs.kitty
+    pkgs.kitty # Terminal
+    pkgs.pavucontrol # Sound control
+    pkgs.wl-clipboard # Clipboard (for screenshot mainly)
+    pkgs.grim # Screenshot 1/2
+    pkgs.slurp # Screenshot 2/2
+    pkgs.dunst # Notifications
+    pkgs.blueman # Bluetooth
+    pkgs.rofi-wayland # Application launcher
+    pkgs.waybar # Bar
   ];
 }
