@@ -30,6 +30,8 @@ if ! [ -z $dotConfigOverrides ] && { [ "${dotConfigOverrides,,}" = "yes" ] || [ 
   ln -sfn $PWD/hypr $HOME/.config/hypr
   rm -rf $HOME/.config/nvim
   ln -sfn $PWD/nvim $HOME/.config/nvim
+  rm -rf $HOME/.config/rofi
+  ln -sfn $PWD/rofi $HOME/.config/rofi
 fi
 
 echo "Complete."

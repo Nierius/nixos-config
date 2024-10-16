@@ -7,6 +7,8 @@
   programs.hyprland.enable = true;
   services.blueman.enable = true;
 
+  security.pam.services.hyprlock = { };
+
   environment.systemPackages = [
     pkgs.kitty # Terminal
     pkgs.pavucontrol # Sound control
@@ -17,5 +19,7 @@
     pkgs.blueman # Bluetooth
     pkgs.rofi-wayland # Application launcher
     pkgs.waybar # Bar
+    pkgs.hyprlock # Lock
+    pkgs.hypridle # Idle
   ];
 }

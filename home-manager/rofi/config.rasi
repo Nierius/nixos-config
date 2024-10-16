@@ -1,0 +1,98 @@
+listview {
+    columns: 1;
+    lines: 7;
+    fixed-height: true;
+    fixed-columns: true;
+    cycle: false;
+    scrollbar: false;
+    border: 0px solid;
+}
+
+window {
+    transparency: "real";
+    width: 450px;
+    border-radius: @b-radius;
+    background-color: @wbg-color;
+    border: @w-border;
+    border-color: @w-border-color;
+    padding: @w-padding;
+}
+
+prompt {
+    text-color: @fg-color;
+}
+
+inputbar {
+    children: ["prompt", "entry"];
+    spacing: @g-spacing;
+}
+
+entry {
+    placeholder: "Search Apps";
+    text-color: @fg-color;
+}
+
+mainbox {
+    spacing: @g-spacing;
+    padding: @g-padding;
+    children: ["inputbar", "listview", "message"];
+}
+
+element {
+    spacing: @g-spacing;
+    padding: @g-padding;
+    border-radius: @b-radius;
+}
+
+element normal.normal {
+	background-color: transparent;
+	text-color: @fg-color;
+}
+
+element alternate.normal {
+	background-color: transparent;
+	text-color: @fg-color;
+}
+
+element selected.active {
+	background-color: @hl-color;
+	text-color: @hlt-color;
+}
+
+element selected.normal {
+	background-color: @hl-color;
+	text-color: @hlt-color;
+}
+
+message {
+    background-color: red;
+}
+
+* {
+    font: "JetBrains Mono Nerd Font Mono 13";
+    g-spacing: 10px;
+    fg-color: #FFFFFFFF;
+    b-radius: 8px;
+    g-padding: 8px;
+    hl-color: #282120aa;
+    hlt-color: #FFFFAA;
+    wbg-color: #282120aa;
+    w-border: 2px solid;
+    w-border-color: #d4af0aff;
+    w-padding: 12px;
+}
+
+configuration {
+  modi: "drun";
+  show-icons: true;
+  timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+  filebrowser {
+      directories-first: true;
+      sorting-method:    "name";
+  }
+  display-drun: "";
+}
+

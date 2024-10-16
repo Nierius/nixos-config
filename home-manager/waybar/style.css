@@ -11,14 +11,15 @@ window > box {
 }
 
 #workspaces button {
+  background: #282120;
   color: #ECC30B;
   padding: 0 5px;
   margin-right: 2px;
 }
 
-#workspaces button.focused {
-  background: #64727D;
-  border-bottom: 1px solid white;
+#workspaces button.active {
+  background: #3D3736;
+  border: 0;
 }
 
 #workspaces button:hover {
@@ -47,7 +48,8 @@ widget > label, widget > box > label {
 
 widget > label {
   padding: 0 10px;
-  background: #5e4e04;
+  /*background: #5e4e04;*/
+  background: #282120;
 }
 
 widget > label:hover {
