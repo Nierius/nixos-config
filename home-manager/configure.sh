@@ -19,5 +19,20 @@ sed -i "s/%USER_NICK%/$USER/g" ./*.nix
 echo "Symlinkg to ~/.config/home-manager"
 ln -sfn $PWD $HOME/.config/home-manager
 
+cd ..
+read -p 'Create dotconfig symlinks for nvim/, waybar/ and hypr/? (THIS WILL OVERWRITE CURRENT DOTCONFIGS!) (yes/no): ' dotConfigOverrides
+
+if ! [ -z $dotConfigOverrides ] && { [ "${dotConfigOverrides,,}" = "yes" ] || [ $dotConfigOverrides = "1" ] || [ "${dotConfigOverrides,,}" = "y" ]; }; then
+  echo "Creating dotconfig symlinks..."
+  rm -rf $HOME/.config/waybar
+  ln -sfn $PWD/waybar $HOME/.config/waybar
+  rm -rf $HOME/.config/hypr
+  ln -sfn $PWD/hypr $HOME/.config/hypr
+  rm -rf $HOME/.config/nvim
+  ln -sfn $PWD/nvim $HOME/.config/nvim
+  rm -rf $HOME/.config/rofi
+  ln -sfn $PWD/rofi $HOME/.config/rofi
+fi
+
 echo "Complete."
 exit 0

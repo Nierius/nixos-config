@@ -17,10 +17,14 @@
       ./environment/firewall.nix
       ./environment/locales.nix
       ./environment/users.nix
+      ./environment/xdg.nix
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    stdenv.cc.cc
+  ];
 
   networking.hostName = "%HOST_NAME%";
   networking.networkmanager.enable = true;

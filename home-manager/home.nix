@@ -28,6 +28,10 @@ in
 
   fonts.fontconfig.enable = true;
 
+  services.dunst.enable = true;
+  services.hypridle.enable = true;
+  programs.hyprlock.enable = true;
+
   home.packages = [
     # Dev tools
     pkgs.lazygit
@@ -51,11 +55,9 @@ in
     pkgs.rustc
     pkgs.cargo
 
-    # Cosmetics
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
-    # pkgs.swaybg
-    # pkgs.dolphin
-    # pkgs.waybar
+
+    pkgs.brightnessctl
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the

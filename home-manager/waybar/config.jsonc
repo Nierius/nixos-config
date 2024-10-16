@@ -1,0 +1,76 @@
+{
+  "reload_style_on_change": true,
+  "layer": "top", // Top is front of window bottom is below
+  "position": "top", // Top, bottom, right, left
+  // "height": "5px", // Dynamic if commented
+  // "margin": // Like css
+  // "spacing": // Like gaps
+  "modules-left": ["hyprland/workspaces", "sway/mode"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": ["pulseaudio#input", "network", "bluetooth", "pulseaudio", "battery", "clock"],
+  "sway/window": {
+    "max-length": 50
+  },
+  "battery": {
+    "format": "{capacity}% {icon} ",
+    "format-icons": ["", "", "", "", ""]
+  },
+  "clock": {
+    "format-alt": "{:%a, %d. %b  %H:%M}"
+  },
+  "network": {
+    "format": "{ifname}",
+    "format-wifi": " ",
+    "format-ethernet": "󰊗 ",
+    "format-disconnected": "", //An empty format will hide the module.
+    "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+    "tooltip-format-ethernet": "{ifname} ",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50,
+    "on-click": "nm-applet" // Use nmtui
+  },
+  "bluetooth": {
+	  "format": " {status}",
+    "format-connected": "",
+	  "format-connected-battery": " {device_battery_percentage}%",
+	  "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+	  "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+	  "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+	  "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+    "on-click": "blueman-manager",
+    "on-click-right": "rfkill block bluetooth"
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-muted": "",
+    "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", ""]
+    },
+    "scroll-step": 1,
+    "on-click": "pavucontrol",
+    "ignored-sinks": ["Easy Effects Sink"],
+    "on-click": "amixer sset 'Master' toggle",
+    "on-click-middle": "pavucontrol"
+    //"on-scroll-up": "amixer sset 'Master' 2%+", // Causes desync between left and right...
+    //"on-scroll-down": "amixer sset 'Master' 2%-" // Causes desync between left and right...
+  },
+  "pulseaudio#input": {
+    "format-source": " {volume}%",
+    "format-source-muted": "",
+    "format": "{format_source}",
+    "scroll-step": 1,
+    "smooth-scrolling-threshold": 1,
+    "on-click": "amixer sset 'Capture' toggle",
+    "on-click-middle": "pavucontrol",
+    "on-scroll-up": "amixer sset 'Capture' 2%+",
+    "on-scroll-down": "amixer sset 'Capture' 2%-"
+  }
+}
