@@ -7,7 +7,6 @@ mkMerge [
     # Make sure opengl is enabled
     hardware.opengl = {
       enable = true;
-      driSupport = true;
       driSupport32Bit = true;
     };
 
@@ -21,6 +20,8 @@ mkMerge [
     services.xserver.videoDrivers = ["nvidia"];
 
     hardware.nvidia = {
+      open = false;
+
       # Modesetting is needed for most wayland compositors
       modesetting.enable = true;
 
