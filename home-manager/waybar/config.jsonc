@@ -7,7 +7,7 @@
   // "spacing": // Like gaps
   "modules-left": ["hyprland/workspaces", "sway/mode"],
   "modules-center": ["hyprland/window"],
-  "modules-right": ["pulseaudio#input", "network", "bluetooth", "pulseaudio", "battery", "clock"],
+  "modules-right": ["custom/notifications", "pulseaudio#input", "network", "bluetooth", "pulseaudio", "battery", "clock"],
   "sway/window": {
     "max-length": 50
   },
@@ -72,5 +72,11 @@
     "on-click-middle": "pavucontrol",
     "on-scroll-up": "amixer sset 'Capture' 2%+",
     "on-scroll-down": "amixer sset 'Capture' 2%-"
+  },
+  "custom/notifications": {
+    "format": "\udb84\udd6b",
+    "exec": "~/.config/waybar/notification_counter.sh",
+    "interval": 1,
+    "on-click": "~/.config/dunst/reset-unseen.sh"
   }
 }
