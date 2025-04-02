@@ -29,8 +29,6 @@ in
   fonts.fontconfig.enable = true;
 
   services.dunst.enable = true;
-  services.hypridle.enable = true;
-  programs.hyprlock.enable = true;
 
   home.packages = [
     # Dev tools
