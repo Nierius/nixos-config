@@ -1,0 +1,22 @@
+[global]
+font="JetBrains Mono Nerd Font 10"
+history_length=100
+corner_radius = 4
+frame_width = 2
+gap_size = 5
+script="~/.config/dunst/on-notify.sh"
+
+[urgency_low]
+background = "#534d4d"
+foreground = "#f8f8f2"
+frame_color = "#aa8c08"
+
+[urgency_normal]
+background = "#3e3736"
+foreground = "#f8f8f2"
+frame_color = "#bf9e09"
+
+[urgency_critical]
+background = "#282120"
+foreground = "#f8f8f2"
+frame_color = "#d4af0a"
