@@ -9,4 +9,8 @@
     firefox
     home-manager
   ];
+
+  services.udev.packages = with pkgs; [
+    via
+  ];
 }
