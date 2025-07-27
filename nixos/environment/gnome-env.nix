@@ -2,7 +2,7 @@
 
 with lib;
 
-mkMerge[
+mkMerge [
   {
     # Enable the X11 windowing system.
     services.xserver.enable = true;
@@ -14,7 +14,6 @@ mkMerge[
       gnome-photos
       gnome-tour
       gedit
-    ]) ++ (with pkgs.gnome; [
       cheese # webcam
       gnome-music
       gnome-terminal

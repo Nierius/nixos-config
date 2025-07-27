@@ -16,7 +16,7 @@ mkMerge [
     programs.noisetorch.enable = true;
   }
   (mkIf config.enableBtHeadphones {
-    hardware.pulseaudio = {
+    services.pulseaudio = {
       extraModules = [ pkgs.pulseaudio-modules-bt ];
       package = pkgs.pulseaudioFull;
     };

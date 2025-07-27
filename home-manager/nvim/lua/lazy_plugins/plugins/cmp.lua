@@ -1,8 +1,10 @@
 return {
   'hrsh7th/nvim-cmp',
   dependencies = {
+    'neovim/nvim-lspconfig',
     'L3MON4D3/LuaSnip',
     'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-nvim-lua',
     'saadparwaiz1/cmp_luasnip',
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
@@ -15,6 +17,46 @@ return {
 
   config = function()
     require('luasnip.loaders.from_vscode').lazy_load()
+
+    require("lspconfig").lua_ls.setup({
+      settings = {
+        Lua = {
+          runtime = {
+            version = "LuaJIT",
+          },
+          diagnostics = {
+            globals = { "vim" },
+          },
+          workspace = {
+            library = vim.api.nvim_get_runtime_file("", true),
+            checkThirdParty = false,
+          },
+          telemetry = {
+            enable = false,
+          },
+        },
+      },
+    })
+
+    require("lspconfig").lua_ls.setup({
+      settings = {
+        Lua = {
+          runtime = {
+            version = "LuaJIT",
+          },
+          diagnostics = {
+            globals = { "vim" },
+          },
+          workspace = {
+            library = vim.api.nvim_get_runtime_file("", true),
+            checkThirdParty = false,
+          },
+          telemetry = {
+            enable = false,
+          },
+        },
+      },
+    })
 
     local lspkind = require('lspkind')
     local cmp = require('cmp')
@@ -40,7 +82,8 @@ return {
       sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         { name = 'luasnip' }, -- For luasnip users.
-        { name = 'nvim_lsp_signature_help' }
+        { name = 'nvim_lsp_signature_help' },
+        { name = 'nvim_lua' }
       }, {
         { name = 'buffer' },
         { name = 'path' },

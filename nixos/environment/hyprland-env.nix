@@ -13,6 +13,7 @@
     pkgs.kitty # Terminal
     pkgs.pavucontrol # Sound control
     pkgs.wl-clipboard # Clipboard (for screenshot mainly)
+    pkgs.wl-gammarelay-rs # Nightlight
     pkgs.grim # Screenshot 1/2
     pkgs.slurp # Screenshot 2/2
     pkgs.dunst # Notifications

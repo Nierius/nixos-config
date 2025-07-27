@@ -35,6 +35,8 @@ in
     pkgs.lazygit
     pkgs.git
     pkgs.neovim
+    pkgs.lunarvim
+    pkgs.jetbrains-toolbox
     pkgs.tmux
     pkgs.ripgrep
     pkgs.fd
@@ -43,7 +45,7 @@ in
     # pkgs.godot_4
 
     # Slack tools
-    pkgs.discord
+    # pkgs.discord
     pkgs.spotify
 
     # Compilers/interpreters/package managers etc
@@ -103,6 +105,10 @@ in
   home.sessionVariables = {
     # EDITOR = "emacs";
     RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
+  };
+
+  home.shellAliases = {
+    nvim = "lvim";
   };
 
   # Let Home Manager install and manage itself.

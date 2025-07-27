@@ -17,10 +17,11 @@ sed -i "s/%USER_NICK%/$USER/g" ./*.nix
 # sed -i "s/%USER_NICK%/$nickname/g" ./**/*.nix # Include this once home-manager split to multiple directories
 
 echo "Symlinkg to ~/.config/home-manager"
-ln -sfn $PWD $HOME/.config/home-manager
+# ln -sfn $PWD $HOME/.config/home-manager
+cp -R $PWD $HOME/.config/home-manager
 
 cd ..
-read -p 'Create dotconfig symlinks for nvim/, waybar/ and hypr/? (THIS WILL OVERWRITE CURRENT DOTCONFIGS!) (yes/no): ' dotConfigOverrides
+read -p 'Create dotconfig symlinks for nvim/, waybar/, .tmux.conf and hypr/? (THIS WILL OVERWRITE CURRENT DOTCONFIGS!) (yes/no): ' dotConfigOverrides
 
 if ! [ -z $dotConfigOverrides ] && { [ "${dotConfigOverrides,,}" = "yes" ] || [ $dotConfigOverrides = "1" ] || [ "${dotConfigOverrides,,}" = "y" ]; }; then
   echo "Creating dotconfig symlinks..."
@@ -34,6 +35,14 @@ if ! [ -z $dotConfigOverrides ] && { [ "${dotConfigOverrides,,}" = "yes" ] || [ 
   ln -sfn $PWD/rofi $HOME/.config/rofi
   rm -rf $HOME/.config/dunst
   ln -sfn $PWD/dunst $HOME/.config/dunst
+  rm -rf $HOME/.tmux.conf
+  ln -sfn $PWD/tmux/tmux.conf $HOME/.tmux.conf
+fi
+
+read -p 'Download TPM plugin manager for tmux? (yes/no): ' dotConfigOverrides
+
+if ! [ -z $dotConfigOverrides ] && { [ "${dotConfigOverrides,,}" = "yes" ] || [ $dotConfigOverrides = "1" ] || [ "${dotConfigOverrides,,}" = "y" ]; }; then
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
 
 echo "Complete."
